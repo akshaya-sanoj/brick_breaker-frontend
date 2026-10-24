@@ -16,14 +16,15 @@ API.interceptors.request.use((req) => {
 });
 
 // --- Auth Endpoints ---
-export const loginUser = (formData) => API.post('/auth/login', formData);
-export const registerUser = (formData) => API.post('/auth/register', formData);
+export const loginUser = (formData) => API.post('/api/auth/login', formData);
+export const registerUser = (formData) => API.post('/api/auth/register', formData);
 
 // --- Game Endpoints ---
-export const startGameSession = () => API.post('/games/start');
-export const completeGameSession = (gameData) => API.post('/games/complete', gameData);
+export const startGameSession = () => API.post('/api/games/start');
+export const completeGameSession = (gameData) => API.post('/api/games/complete', gameData);
+export const buySkin = (skinData) => API.post('/api/games/buy-skin', skinData);
 
 // --- Leaderboard ---
-export const getLeaderboard = () => API.get('/leaderboard');
-export const buySkin = (skinData) => API.post('/games/buy-skin', skinData);
+export const getLeaderboard = () => API.get('/api/leaderboard');
+
 export default API;
